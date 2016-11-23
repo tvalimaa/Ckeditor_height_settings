@@ -1,0 +1,7 @@
+ckeditor_height.settings:
+  path: 'admin/config/content/ckeditor_height'
+  defaults:
+    _form: '\Drupal\ckeditor_height\Form\CkeditorHeightSettingsForm'
+    _title: 'CKeditor height settings'
+  requirements:
+    _permission: 'administer site configuration'

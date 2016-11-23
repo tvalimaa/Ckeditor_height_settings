@@ -1,0 +1,7 @@
+type: module
+name: Ckeditor height
+description: Change Ckeditor height for default 200px
+# core: 8.x
+
+version: '8.x-1.0'
+core: '8.x'

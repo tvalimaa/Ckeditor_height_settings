@@ -1,0 +1,6 @@
+ckeditor_height.admin_form:
+  title: 'Ckeditor height settings'
+  route_name: ckeditor_height.settings
+  description: 'Settings page for ckeditor height'
+  parent: system.admin_config_content
+  weight: 98

@@ -1,0 +1,12 @@
+<?php
+
+// change the ckeditor's settings
+function ckeditor_height_editor_js_settings_alter(array &$settings) {
+  $config = \Drupal::service('config.factory')->getEditable('ckeditor_height.settings');
+  $ckeditor_height = (!empty($config->get('ckeditor_height_height'))) ? $config->get('ckeditor_height_height') : '200';
+  foreach (array_keys($settings['editor']['formats']) as $text_format_id) {
+    if ($settings['editor']['formats'][$text_format_id]['editor'] === 'ckeditor') {
+      $settings['editor']['formats'][$text_format_id]['editorSettings']['height'] = $ckeditor_height.'px';
+    }
+  }
+}
