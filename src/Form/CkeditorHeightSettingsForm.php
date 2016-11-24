@@ -44,6 +44,15 @@ class CkeditorHeightSettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    if (!is_numeric($form_state->getValue('ckeditor_height_height'))) {
+      $form_state->setErrorByName('ckeditor_height_height', $this->t('The value is not numeric. Please enter a number.'));
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $config = \Drupal::service('config.factory')->getEditable('ckeditor_height.settings');
     $config->set('ckeditor_height_height', $form_state->getValue('ckeditor_height_height'))->save();
